@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TonleHosting — Plans</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="dark">
+
+<header class="site-header">
+  <div class="brand">
+    <img src="assets/logo.png" alt="logo" class="logo" />
+    <span class="logo-text">
+      <span class="nastra-part">Emeperor</span>
+      <span class="game-part"></span>
+    </span>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+  </button>
+  <nav id="navMenu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="mc.html" class="nav-link">iP</a>
+    <a href="terms.html" class="nav-link">Map</a>
+    <a href="support.html" class="nav-link">Gamemode</a>
+  </nav>
+  <audio id="uiSound" src="tra.mp3" preload="auto"></audio>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>Maps</h1>
+    <p class="muted">Maps List in Server</p>
+  </section>
+  
+  <section class="plans-grid">
+
+    <!-- PLAN 1 -->
+    <div class="plan">
+      <h3>Map 1</h3>
+      <div class="price" data-price="3.99">Name:</div>
+        <img class="Rub1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQN9DxRKlOKbYvs3gngIaSGKWeq-Gn8egRCConbY0AwRzll24P5yMdwsI&s=10">
+        <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQN9DxRKlOKbYvs3gngIaSGKWeq-Gn8egRCConbY0AwRzll24P5yMdwsI&s=10" class="btn buy-btn">Click to View</a>
+    </div>
+  </div>
+  </section>
+</main>
+
+<script>
+document.querySelectorAll(".buy-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    const planData = {
+      plan: btn.dataset.plan,
+      ram: btn.dataset.ram,
+      cpu: btn.dataset.cpu,
+      transfer: btn.dataset.transfer,
+      price: btn.dataset.price
+    };
+
+    // store in localStorage
+    localStorage.setItem("planData", JSON.stringify(planData));
+
+    // go to checkout page
+    window.location.href = "checkout.html";
+  });
+});
+</script>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
